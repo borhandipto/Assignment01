@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Selection</title>
+    <style>
+        .country {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .card select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .card p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="country">
+        <div class="card">
+            <h1>Select a Country:</h1>
+
+            <select id="countrySelect" onchange="showCapital()">
+                <option value="">Select a country</option>
+                <option value="usa">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="france">Bangladesh</option>
+                <option value="germany">Germany</option>
+                <option value="japan">Japan</option>
+            </select>
+            <p id="capitalDisplay">Select one to show capital</p>
+        </div>
+    </div>
+
+    <script>
+        function showCapital() {
+            const selectElement = document.getElementById("countrySelect");
+            const selectedCountry = selectElement.value;
+            let capital = "";
+
+            if (selectedCountry === "usa") {
+                capital = "Washington D.C.";
+            } else if (selectedCountry === "uk") {
+                capital = "London";
+            } else if (selectedCountry === "france") {
+                capital = "Dhaka";
+            } else if (selectedCountry === "germany") {
+                capital = "Berlin";
+            } else if (selectedCountry === "japan") {
+                capital = "Tokyo";
+            } else {
+                capital = "Select a country to see its capital";
+            }
+
+            document.getElementById("capitalDisplay").innerText = capital;
+        }
+    </script>
+</body>
+
+</html>
